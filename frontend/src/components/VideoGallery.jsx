@@ -99,7 +99,7 @@ const VideoGallery = () => {
                     <CardMedia
                       component="video"
                       controls
-                      src={`http://localhost:5000/${video.videoUrl}`}
+                      src={`https://hajj-bv3l.onrender.com/${video.videoUrl}`}
                       sx={{
                         position: 'absolute',
                         top: 0,
