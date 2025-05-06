@@ -51,7 +51,7 @@ const AdminReviews = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/reviews', {
+      const response = await axios.post('https://hajj-bv3l.onrender.com/api/reviews', {
         name: newReview.name,
         description: newReview.description,
         rating: Number(newReview.rating)
@@ -71,7 +71,7 @@ const AdminReviews = () => {
     if (!id) return; // Guard against undefined id
     
     try {
-      await axios.delete(`http://localhost:5000/api/reviews/${id}`);
+      await axios.delete(`https://hajj-bv3l.onrender.com/api/reviews/${id}`);
       fetchReviews();
     } catch (error) {
       console.error('Error deleting review:', error);
