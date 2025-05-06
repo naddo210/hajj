@@ -31,7 +31,7 @@ const AdminVideos = () => {
 
   const fetchVideos = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/videos');
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/videos`);
       setVideos(response.data);
     } catch (error) {
       console.error('Error fetching videos:', error);
@@ -45,7 +45,7 @@ const AdminVideos = () => {
     formData.append('video', newVideo.video);
 
     try {
-      await axios.post('http://localhost:5000/api/videos', formData, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/videos`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -60,7 +60,7 @@ const AdminVideos = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/videos/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/videos/${id}`);
       fetchVideos();
     } catch (error) {
       console.error('Error deleting video:', error);
@@ -107,15 +107,8 @@ const AdminVideos = () => {
               <Box sx={{ position: 'relative', width: '100%', pt: '56.25%' }}>
                 <video
                   controls
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover'
-                  }}
-                  src={`http://localhost:5000/${video.videoUrl}`}
+                  style={{ width: '100%', height: 200, objectFit: 'cover' }}
+                  src={`${import.meta.env.VITE_API_URL}/${video.videoUrl}`}
                 />
               </Box>
               <CardContent sx={{ 

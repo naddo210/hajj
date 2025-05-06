@@ -22,7 +22,7 @@ const VideoGallery = () => {
 
   const fetchVideos = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/videos');
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/videos`);
       setVideos(response.data);
     } catch (error) {
       console.error('Error fetching videos:', error);
@@ -99,15 +99,8 @@ const VideoGallery = () => {
                     <CardMedia
                       component="video"
                       controls
-                      src={`http://localhost:5000/${video.videoUrl}`}
-                      sx={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover'
-                      }}
+                      src={`${import.meta.env.VITE_API_URL}/${video.videoUrl}`}
+                      sx={{ height: 240 }}
                     />
                   </Box>
                   <CardContent 
