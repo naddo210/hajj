@@ -34,7 +34,7 @@ const AdminReviews = () => {
 
   const fetchReviews = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/reviews');
+      const response = await axios.get('https://hajj-bv3l.onrender.com/api/reviews');
       console.log('Fetched reviews:', response.data); // Add this to debug
       setReviews(response.data || []); // Ensure we always have an array
     } catch (error) {
