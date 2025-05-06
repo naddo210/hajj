@@ -31,7 +31,7 @@ const AdminVideos = () => {
 
   const fetchVideos = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/videos');
+      const response = await axios.get('https://hajj-bv3l.onrender.com/api/videos');
       setVideos(response.data);
     } catch (error) {
       console.error('Error fetching videos:', error);
