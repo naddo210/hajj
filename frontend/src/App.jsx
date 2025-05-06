@@ -28,8 +28,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/admin" element={<AdminPanel />}>
             <Route path="reviews" element={<AdminReviews />} />
-            <Route path="reviews" element={<AdminReviews />} />
-          <Route path="videos" element={<AdminVideos />} />
+            <Route path="videos" element={<AdminVideos />} />
           </Route>
         </Routes>
         <Footer />
