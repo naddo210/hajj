@@ -22,7 +22,11 @@ const VideoGallery = () => {
 
   const fetchVideos = async () => {
     try {
+<<<<<<< HEAD
       const response = await axios.get(`${import.meta.env.VITE_API_URL}/videos`);
+=======
+      const response = await axios.get('https://hajj-bv3l.onrender.com/api/videos');
+>>>>>>> 1ff2f6ab9dc106f738410001b780b8e2c3d14fc0
       setVideos(response.data);
     } catch (error) {
       console.error('Error fetching videos:', error);
@@ -99,8 +103,20 @@ const VideoGallery = () => {
                     <CardMedia
                       component="video"
                       controls
+<<<<<<< HEAD
                       src={`${import.meta.env.VITE_API_URL}/${video.videoUrl}`}
                       sx={{ height: 240 }}
+=======
+                      src={`https://hajj-bv3l.onrender.com/${video.videoUrl}`}
+                      sx={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover'
+                      }}
+>>>>>>> 1ff2f6ab9dc106f738410001b780b8e2c3d14fc0
                     />
                   </Box>
                   <CardContent 

@@ -34,8 +34,7 @@ const AdminReviews = () => {
 
   const fetchReviews = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/reviews');
-      console.log('Fetched reviews:', response.data); // Add this to debug
+      const response = await axios.get('/api/reviews');
       setReviews(response.data || []); // Ensure we always have an array
     } catch (error) {
       console.error('Error fetching reviews:', error);
@@ -51,7 +50,7 @@ const AdminReviews = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/reviews', {
+      const response = await axios.post('/api/reviews', {
         name: newReview.name,
         description: newReview.description,
         rating: Number(newReview.rating)
@@ -71,7 +70,7 @@ const AdminReviews = () => {
     if (!id) return; // Guard against undefined id
     
     try {
-      await axios.delete(`http://localhost:5000/api/reviews/${id}`);
+      await axios.delete(`/api/reviews/${id}`);
       fetchReviews();
     } catch (error) {
       console.error('Error deleting review:', error);

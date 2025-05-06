@@ -31,7 +31,11 @@ const AdminVideos = () => {
 
   const fetchVideos = async () => {
     try {
+<<<<<<< HEAD
       const response = await axios.get(`${import.meta.env.VITE_API_URL}/videos`);
+=======
+      const response = await axios.get('https://hajj-bv3l.onrender.com/api/videos');
+>>>>>>> 1ff2f6ab9dc106f738410001b780b8e2c3d14fc0
       setVideos(response.data);
     } catch (error) {
       console.error('Error fetching videos:', error);
@@ -45,7 +49,11 @@ const AdminVideos = () => {
     formData.append('video', newVideo.video);
 
     try {
+<<<<<<< HEAD
       await axios.post(`${import.meta.env.VITE_API_URL}/videos`, formData, {
+=======
+      await axios.post('https://hajj-bv3l.onrender.com/api/videos', formData, {
+>>>>>>> 1ff2f6ab9dc106f738410001b780b8e2c3d14fc0
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -60,7 +68,11 @@ const AdminVideos = () => {
 
   const handleDelete = async (id) => {
     try {
+<<<<<<< HEAD
       await axios.delete(`${import.meta.env.VITE_API_URL}/videos/${id}`);
+=======
+      await axios.delete(`https://hajj-bv3l.onrender.com/api/videos/${id}`);
+>>>>>>> 1ff2f6ab9dc106f738410001b780b8e2c3d14fc0
       fetchVideos();
     } catch (error) {
       console.error('Error deleting video:', error);

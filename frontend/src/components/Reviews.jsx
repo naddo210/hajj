@@ -12,7 +12,11 @@ import {
 import axios from 'axios';
 import './Reviews.css';
 
+<<<<<<< HEAD
 const API_URL = import.meta.env.VITE_API_URL;
+=======
+const API_URL = 'https://hajj-bv3l.onrender.com/api';
+>>>>>>> 1ff2f6ab9dc106f738410001b780b8e2c3d14fc0
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);

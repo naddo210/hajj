@@ -25,7 +25,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://hajj-bv3l.onrender.com/api';
 
 const ManageReviews = () => {
   const [reviews, setReviews] = useState([]);
